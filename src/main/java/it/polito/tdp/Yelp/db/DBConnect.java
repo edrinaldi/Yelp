@@ -13,12 +13,12 @@ public class DBConnect {
 
 	public static Connection getConnection() {
 
-		if (ds == null) { // Singleton
+		if (ds == null) { // Pattern singleton - un'unica data source
 			// crea nuova data source
-			ds = new HikariDataSource();
+			ds = new HikariDataSource();	// crea un pool di connessione
 			ds.setJdbcUrl(url);
 			ds.setUsername("root");
-			ds.setPassword("root");
+			ds.setPassword("Jimmyboston00!");
 		}
 
 		try {

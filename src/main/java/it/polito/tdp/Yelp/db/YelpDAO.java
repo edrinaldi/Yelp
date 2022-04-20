@@ -59,9 +59,9 @@ public class YelpDAO {
 			PreparedStatement st = conn.prepareStatement(sql);
 			st.setString(1, business.getBusinessId());
 			ResultSet res = st.executeQuery();
-			res.first();
+			res.first();	// al posto del while (query aggregata)
 			double stars = res.getDouble("avg_stars") ;
-			conn.close();
+			conn.close();	// per restituire la conn al pool
 			return stars ;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
